@@ -1,0 +1,33 @@
+{
+  "name": "pkstvplus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "debug": "cross-env DEBUG=* npx @11ty/eleventy",
+    "clean": "npx gulp clean",
+    "prestart": "npm run clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@ampproject/eleventy-plugin-amp": "^0.5.3",
+    "autoprefixer": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "del": "^6.0.0",
+    "dotenv": "^8.2.0",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "postcss": "^8.2.1",
+    "postcss-import-url": "^6.0.0",
+    "readable-stream": "^3.6.0",
+    "sass": "^1.30.0",
+    "tailwindcss": "^2.0.2"
+  }
+}
