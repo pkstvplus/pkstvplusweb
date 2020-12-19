@@ -1,5 +1,2 @@
-const css = require('./css')
-const clean = require('./clean')
-
-exports.css = css.cssTask
-exports.clean = clean.cleanTask
+exports.css = require('./css').default
+exports.clean = require('./clean').default

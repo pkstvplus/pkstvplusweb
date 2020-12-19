@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply min-h-screen flex flex-col;
+}
+
+#index-header {
+    @apply hidden;
+}
+
+#index-main {
+    @apply flex-1 grid grid-cols-1;
+}
+
+#index-footer {
+    @apply hidden;
+}

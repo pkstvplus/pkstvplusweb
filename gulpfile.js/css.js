@@ -11,7 +11,7 @@ const tailwind = require('tailwindcss')
 const autoprefixer = require('autoprefixer')
 const importcss = require('postcss-import-url')
 
-function css() {
+function main() {
     const SRC = './src/_styles/main.scss'
     const DEST = './src/_includes/css/'
 
@@ -30,4 +30,4 @@ function css() {
     )
 }
 
-exports.cssTask = css
+exports.default = main
