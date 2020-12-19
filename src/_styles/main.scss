@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --accent-color: #ff5000;
+}
+
 body {
     @apply min-h-screen flex flex-col;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply font-customHeading;
 }
 
 #index-header {
@@ -11,9 +21,62 @@ body {
 }
 
 #index-main {
-    @apply flex-1 grid grid-cols-1;
+    @apply flex-1;
 }
 
 #index-footer {
     @apply hidden;
+}
+
+#videoLayout {
+    @apply max-w-screen-xl grid grid-cols-1 lg:grid-cols-4 gap-x-4 gap-y-8 items-start p-8 mx-auto;
+}
+
+#videoPlayer {
+    @apply col-span-1 lg:col-span-3 grid grid-cols-1 gap-4;
+    amp-youtube {
+        @apply col-span-1 lg:rounded-lg -mt-8 -mx-8 lg:m-0;
+    }
+    #videoDescription {
+        @apply col-span-1;
+        h1 {
+            @apply font-extrabold text-xl lg:text-3xl mb-4;
+            &:hover {
+                color: var(--accent-color);
+            }
+        }
+        p {
+            &#date {
+                @apply text-sm mb-4;
+            }
+            &#description {
+                @apply text-lg mb-4;
+            }
+            &#channel-name {
+                @apply text-base;
+            }
+        }
+    }
+}
+
+#videoLinks {
+    @apply col-span-1 lg:col-span-1 grid grid-cols-1 gap-y-4;
+    .videoLinksItem {
+        @apply grid grid-cols-2 gap-2;
+        .videoLinksImage {
+            @apply col-span-1;
+            amp-img {
+                @apply rounded-lg;
+            }
+        }
+        .videoLinksDescription {
+            @apply col-span-1;
+            p {
+                @apply text-xs sm:text-lg lg:text-xs;
+                &.videoLinksDescriptionTitle {
+                    @apply font-bold sm:text-xl lg:text-sm;
+                }
+            }
+        }
+    }
 }

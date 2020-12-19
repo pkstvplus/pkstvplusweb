@@ -1,0 +1,20 @@
+---
+layout: layout/videoLayout
+tags: video
+pagination:
+    data: content.video
+    size: 1
+    alias: video
+    addAllPagesToCollections: true
+eleventyComputed:
+    id: '{{ video.id.videoId }}'
+    title: '{{ video.snippet.title }}'
+    description: '{{ video.snippet.description }}'
+    publishedAt: '{{ video.snippet.publishedAt }}'
+    image: '{{ video.snippet.thumbnails.high.url }}'
+    channel:
+        name: '{{ video.snippet.channelTitle }}'
+        url: '{{ video.snippet.channelId | prepend: "https://www.youtube.com/channel/" | append: "?sub_confirmation=1" }}'
+permalink: '/video/{{ video.id.videoId }}.html'
+---
+{{ description }}

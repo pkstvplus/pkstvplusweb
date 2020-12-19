@@ -12,7 +12,16 @@ module.exports = {
   corePlugins: {
     animation: false
   },
-  theme: {},
+  theme: {
+    fontFamily: {
+      customHeading: ['Montserrat', ...defaultTheme.fontFamily.sans]
+    },
+    extend: {
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans]
+      }
+    }
+  },
   variants: {
     extend: {},
   },

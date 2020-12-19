@@ -3,6 +3,13 @@ const ampPlugin = require('@ampproject/eleventy-plugin-amp')
 
 module.exports = function(eleventyConfig) {
 
+    //custom collection
+    eleventyConfig.addCollection('videoSorted', function(collection) {
+        return collection.getFilteredByTag('video').sort(function(a, b) {
+            return b.data.publishedAt - a.data.publishedAt
+        })
+    })
+
     // build events
     eleventyConfig.on('beforeBuild', function() {
         console.log('Menjalankan tugas pra-build...')
