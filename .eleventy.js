@@ -22,7 +22,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setLibrary('liquid', new Liquid(liquidjsOptions))
 
     // local plugin
-    eleventyConfig.addPlugin(require('./plugin'))
+    eleventyConfig.addPlugin(require('./plugin/date'))
 
     // build events
     eleventyConfig.on('beforeBuild', function() {
