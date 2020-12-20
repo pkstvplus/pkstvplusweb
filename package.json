@@ -7,8 +7,10 @@
     "start": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
     "debug": "cross-env DEBUG=* npx @11ty/eleventy",
-    "clean": "npx gulp clean",
-    "prestart": "npm run clean"
+    "clean": "npm run clean:output",
+    "clean:output": "npx gulp clean",
+    "clean:cache": "npx gulp cleancache",
+    "prestart": "npm run clean:output"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +27,9 @@
     "gulp-postcss": "^9.0.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
+    "liquidjs": "^9.19.0",
     "lodash": "^4.17.20",
+    "luxon": "^1.25.0",
     "postcss": "^8.2.1",
     "postcss-import-url": "^6.0.0",
     "readable-stream": "^3.6.0",

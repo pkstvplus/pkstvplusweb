@@ -1,8 +1,7 @@
 ---
 layout: layout/videoLayout
-tags: video
 pagination:
-    data: content.video
+    data: content.milenial
     size: 1
     alias: video
     addAllPagesToCollections: true
@@ -15,6 +14,9 @@ eleventyComputed:
     channel:
         name: '{{ video.snippet.channelTitle }}'
         url: '{{ video.snippet.channelId | prepend: "https://www.youtube.com/channel/" | append: "?sub_confirmation=1" }}'
-permalink: '/video/{{ video.id.videoId }}.html'
+permalink: '/video/{{ video.snippet.channelTitle | downcase | slug }}/{{ video.id.videoId }}.html'
+tags: 
+    - video
+    - milenial
 ---
 {{ description }}

@@ -3,41 +3,22 @@ layout: layout/layout
 ---
 <div id="videoLayout">
     <div id="videoPlayer">
-        <amp-youtube data-videoid="{{ id }}" layout="responsive" width="480" height="270">
+        <amp-youtube data-videoid="{{ id }}" layout="responsive" width="480" height="270" title="{{ title }}" data-param-modestbranding="1" data-param-rel="0" dock>
             <amp-img src="{{ image }}" layout="fill" placeholder></amp-img>
         </amp-youtube>
         <div id="videoDescription">
             <h1>{{ title }}</h1>
-            <p id="date">{{ publishedAt | prepend: 'Dipublikasikan pada ' }}</p>
+            <p id="date"><time datetime="{{ publishedAt }}">{{ publishedAt | dateReadable | prepend: 'Dipublikasikan pada ' }}</time></p>
             <p id="description">{{ content }}</p>
             <p id="channel-name">
                 <span class="font-bold"><a href="#">{{ channel.name }}</a></span>
-                <span class="text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-lg p-1 ml-2">
-                    <a href="{{ channel.url }}" target="_blank" rel="noreferrer">{{ 'Subscribe di Youtube' | upcase }}</a>
-                </span>
             </p>
         </div>
     </div>
     <div id="videoLinks">
-        {% assign items = collections.videoSorted %}
-        {% for item in items limit: 8 %}
-        {% unless item.url == page.url %}
-        <div class="videoLinksItem">
-            <a class="videoLinksImage" href="{{ item.url }}" title="{{ item.data.title }}">
-                <amp-img src="{{ item.data.image }}" width="480" height="360" layout="responsive"></amp-img>
-            </a>
-            <div class="videoLinksDescription">
-                <p class="videoLinksDescriptionTitle">
-                    <a href="{{ item.url }}" title="{{ item.data.title }}">{{ item.data.title | truncate: 30 }}</a>
-                </p>
-                <p>
-                    <span>{{ item.data.channel.name }}</span>
-                    <span>&bull;</span>
-                    <time datetime="{{ item.data.publishedAt }}">{{ item.data.publishedAt }}</time>
-                </p>
-            </div>
-        </div>
-        {% endunless %}
+        {% assign related = collections.video | where: 'data.channel.name', channel.name | sort: 'data.publishedAt' | reverse %}
+        {% for item in related limit: 8 %}
+        {% include components/video-links-item %}
         {% endfor %}
     </div>
 </div>

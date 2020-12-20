@@ -6,4 +6,10 @@ function main(cb) {
     cb()
 }
 
+function clearcache(cb) {
+    del('.cache')
+    cb()
+}
+
 exports.default = main
+exports.clearcache = clearcache

@@ -3,12 +3,26 @@ const ampPlugin = require('@ampproject/eleventy-plugin-amp')
 
 module.exports = function(eleventyConfig) {
 
-    //custom collection
-    eleventyConfig.addCollection('videoSorted', function(collection) {
-        return collection.getFilteredByTag('video').sort(function(a, b) {
-            return b.data.publishedAt - a.data.publishedAt
-        })
+    //passthrough copy
+    eleventyConfig.addPassthroughCopy({
+        'assets/logo': 'img/logo'
     })
+
+    //add watch target
+    eleventyConfig.addWatchTarget('./src/_styles/')
+    eleventyConfig.addWatchTarget('./gulpfile.js/')
+
+    let { Liquid } = require('liquidjs')
+    let liquidjsOptions = {
+        extname: '.liquid',
+        dynamicPartials: false,
+        strict_filters: true,
+        root: ['src']
+    }
+    eleventyConfig.setLibrary('liquid', new Liquid(liquidjsOptions))
+
+    // local plugin
+    eleventyConfig.addPlugin(require('./plugin'))
 
     // build events
     eleventyConfig.on('beforeBuild', function() {
@@ -23,7 +37,8 @@ module.exports = function(eleventyConfig) {
 
     // AMP Plugin
     eleventyConfig.addPlugin(ampPlugin, {
-        minifyCSS: false
+        minifyCSS: false,
+        validation: false
     })
    
     // default dirs

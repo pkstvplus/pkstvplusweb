@@ -5,14 +5,13 @@ const _ = require('lodash')
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY
 const CHANNELS = [
     'UCToDQGTa-S1hbnfXu47eULA', // PKSTV
-    'UCoRGdOssLxGG9FoK251fRmQ', // PKSTV Jakarta
-    'UCmr0tJWJQE98Y0IA6CA_r2Q'  // PKSTV Jabar
+    'UCIkLKSeWh7-tpPnVnoQlBfg', // PKSTV DPR-RI 
 ]
 
 async function getData(id) {
-    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${id}&maxResults=10&order=date&type=video&videoSyndicated=true&videoEmbeddable=true&key=${YOUTUBE_API_KEY}`
+    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${id}&maxResults=50&order=date&type=video&videoSyndicated=true&videoEmbeddable=true&key=${YOUTUBE_API_KEY}`
     let data = await Cache(url, {
-        duration: '7d',
+        duration: '1d',
         type: 'json'
     })
     return data

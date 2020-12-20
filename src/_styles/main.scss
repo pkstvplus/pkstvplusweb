@@ -9,23 +9,74 @@
 }
 
 body {
-    @apply min-h-screen flex flex-col;
+    @apply min-h-screen flex flex-col bg-gray-50;
 }
 
 h1, h2, h3, h4, h5, h6 {
     @apply font-customHeading;
 }
 
-#index-header {
+#site-header {
+    @apply fixed overflow-hidden top-0 inset-x-0 h-20 z-10 px-8 pt-4 bg-white;
+    #site-header-bar {
+        @apply max-w-screen-xl grid grid-cols-1 place-items-start mx-auto;
+    }
+}
+
+#site-main {
+    @apply flex-1 pt-20;
+}
+
+#site-footer {
     @apply hidden;
 }
 
-#index-main {
-    @apply flex-1;
+#indexLayout {
+    @apply md:max-w-screen-xl hidden md:grid md:grid-cols-1 md:gap-8;
 }
 
-#index-footer {
-    @apply hidden;
+#indexLayoutMobile {
+    @apply max-w-screen-sm md:hidden grid grid-cols-1 gap-8;
+    .indexCarouselItem {
+        amp-img {
+            @apply rounded-lg mb-2;
+        }
+        .indexCarouselDesc {
+            * {
+                @apply whitespace-normal;
+            }
+            h1 {
+                @apply font-sans font-bold text-lg mb-1;
+            }
+            p {
+                @apply text-sm text-gray-500;
+            }
+        }
+    }
+}
+
+#indexLayout, #indexLayoutMobile {
+    @apply px-8 pt-8 mx-auto;
+}
+
+.indexCarousel {
+    > h1 {
+        @apply font-extrabold text-xl lg:text-2xl mb-4;
+    }
+    .indexCarouselItem {
+        @apply w-64 h-64;
+        amp-img {
+            @apply rounded-lg mb-2;
+        }
+        .indexCarouselDesc {
+            h1 {
+                @apply font-sans font-bold truncate text-base h-6 mb-1;
+            }
+            p {
+                @apply text-xs text-gray-500;
+            }
+        }
+    }
 }
 
 #videoLayout {
@@ -72,9 +123,9 @@ h1, h2, h3, h4, h5, h6 {
         .videoLinksDescription {
             @apply col-span-1;
             p {
-                @apply text-xs sm:text-lg lg:text-xs;
+                @apply text-sm sm:text-lg lg:text-xs;
                 &.videoLinksDescriptionTitle {
-                    @apply font-bold sm:text-xl lg:text-sm;
+                    @apply font-bold text-base sm:text-xl lg:text-sm;
                 }
             }
         }

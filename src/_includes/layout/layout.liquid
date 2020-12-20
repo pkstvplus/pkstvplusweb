@@ -1,8 +1,12 @@
 ---
 layout: layout/base
 ---
-<header id="index-header"></header>
-<main id="index-main">
+<header id="site-header" amp-fx="float-in-top">
+    <div id="site-header-bar">
+        <a href="/" title="Home"><amp-img src="/img/logo/logo.png" width="125" height="48" layout="fixed" alt="logo"></amp-img></a>
+    </div>
+</header>
+<main id="site-main">
     {{ content }}
 </main>
-<footer id="index-footer"></footer>
+<footer id="site-footer"></footer>

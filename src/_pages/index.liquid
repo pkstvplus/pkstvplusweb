@@ -2,6 +2,74 @@
 permalink: index.html
 layout: layout/layout
 ---
-{% for post in collections.video %}
-<p><a href="{{ post.url }}">{{ post.data.title }}</a></p>
-{% endfor %}
+<div id="indexLayout">
+    {% assign pks_tv = collections.video | where: 'data.channel.name', 'PKSTV' | sort: 'data.publishedAt' | reverse %}
+    <div class="indexCarousel">
+        <h1>Terbaru dari PKSTV</h1>
+        <amp-carousel height="256" layout="fixed-height" type="carousel">
+            {% for post in pks_tv limit: 25 %}
+            {% include components/index/carousel-item %}
+            {% endfor %}
+        </amp-carousel>
+    </div>
+    {% assign pks_tv_dpr = collections.video | where: 'data.channel.name', 'PKSTV DPR RI' | sort: 'data.publishedAt' | reverse %}
+    <div class="indexCarousel">
+        <h1>Kawal Wakil Kita</h1>
+        <amp-carousel height="256" layout="fixed-height" type="carousel">
+            {% for post in pks_tv_dpr limit: 25 %}
+            {% include components/index/carousel-item %}
+            {% endfor %}
+        </amp-carousel>
+    </div>
+    {% assign ulama = collections.ulama | sort: 'data.publishedAt' | reverse %}
+    <div class="indexCarousel">
+        <h1>Nasihat Guru Kita</h1>
+        <amp-carousel height="256" layout="fixed-height" type="carousel">
+            {% for post in ulama limit: 25 %}
+            {% include components/index/carousel-item %}
+            {% endfor %}
+        </amp-carousel>
+    </div>
+    {% assign tokoh = collections.tokoh | sort: 'data.publishedAt' | reverse %}
+    <div class="indexCarousel">
+        <h1>Aktivitas Para Pelayan Rakyat</h1>
+        <amp-carousel height="256" layout="fixed-height" type="carousel">
+            {% for post in tokoh limit: 25 %}
+            {% include components/index/carousel-item %}
+            {% endfor %}
+        </amp-carousel>
+    </div>
+    {% assign news = collections.media | sort: 'data.publishedAt' | reverse %}
+    <div class="indexCarousel">
+        <h1>Berita Media Terkini</h1>
+        <amp-carousel height="256" layout="fixed-height" type="carousel">
+            {% for post in news limit: 50 %}
+            {% include components/index/carousel-item %}
+            {% endfor %}
+        </amp-carousel>
+    </div>
+    {% assign pks_muda = collections.milenial | sort: 'data.publishedAt' | reverse %}
+    <div class="indexCarousel">
+        <h1>Buat Kamu Generasi Milenial</h1>
+        <amp-carousel height="256" layout="fixed-height" type="carousel">
+            {% for post in pks_muda limit: 25 %}
+            {% include components/index/carousel-item %}
+            {% endfor %}
+        </amp-carousel>
+    </div>
+    {% assign daerah = collections.daerah | sort: 'data.publishedAt' | reverse %}
+    <div class="indexCarousel">
+        <h1>Bersama Melayani Rakyat Daerah</h1>
+        <amp-carousel height="256" layout="fixed-height" type="carousel">
+            {% for post in daerah limit: 50 %}
+            {% include components/index/carousel-item %}
+            {% endfor %}
+        </amp-carousel>
+    </div>
+</div>
+<div id="indexLayoutMobile">
+    {% assign for_mobile = collections.video | sort: 'data.publishedAt' | reverse %}
+    {% for post in for_mobile limit: 25 %}
+    {% include components/index/carousel-item %}
+    {% endfor %}
+</div>

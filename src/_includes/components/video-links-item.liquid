@@ -1,0 +1,12 @@
+<div class="videoLinksItem">
+    <a class="videoLinksImage" href="{{ item.url }}" title="{{ item.data.title }}">
+        <amp-img src="{{ item.data.image }}" width="480" height="270" layout="responsive"></amp-img>
+    </a>
+    <div class="videoLinksDescription">
+        <p class="videoLinksDescriptionTitle">
+            <a href="{{ item.url }}" title="{{ item.data.title }}">{{ item.data.title | truncate: 30 }}</a>
+        </p>
+        <p><span>{{ item.data.channel.name | upcase }}</span></p>
+        <p><time datetime="{{ item.data.publishedAt }}">{{ item.data.publishedAt | dateReadable }}</time></p>
+    </div>
+</div>

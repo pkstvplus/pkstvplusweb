@@ -1,0 +1,22 @@
+---
+layout: layout/videoLayout
+pagination:
+    data: content.ulama
+    size: 1
+    alias: video
+    addAllPagesToCollections: true
+eleventyComputed:
+    id: '{{ video.id.videoId }}'
+    title: '{{ video.snippet.title }}'
+    description: '{{ video.snippet.description }}'
+    publishedAt: '{{ video.snippet.publishedAt }}'
+    image: '{{ video.snippet.thumbnails.high.url }}'
+    channel:
+        name: '{{ video.snippet.channelTitle }}'
+        url: '{{ video.snippet.channelId | prepend: "https://www.youtube.com/channel/" | append: "?sub_confirmation=1" }}'
+permalink: '/video/{{ video.snippet.channelTitle | downcase | slug }}/{{ video.id.videoId }}.html'
+tags: 
+    - video
+    - ulama
+---
+{{ description }}
