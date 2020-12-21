@@ -1,4 +1,4 @@
-require('dotenv').config
+require('dotenv').config()
 const Cache = require('@11ty/eleventy-cache-assets')
 const _ = require('lodash')
 

@@ -1,4 +1,4 @@
-require('dotenv').config
+require('dotenv').config()
 const {src, dest} = require('gulp')
 const pipeline = require('readable-stream').pipeline
 
