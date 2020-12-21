@@ -16,9 +16,9 @@ layout: layout/layout
         </div>
     </div>
     <div id="videoLinks">
-        {% assign related = collections.video | where: 'data.channel.name', channel.name | sort: 'data.publishedAt' | reverse %}
+        {% assign related = collections.video | shuffle %}
         {% for item in related limit: 8 %}
-        {% include components/video-links-item %}
+        {% include 'components/video-links-item' %}
         {% endfor %}
     </div>
 </div>

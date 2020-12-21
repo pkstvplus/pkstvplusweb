@@ -9,7 +9,7 @@
 }
 
 body {
-    @apply min-h-screen flex flex-col bg-gray-50;
+    @apply min-h-screen flex flex-col bg-gray-100;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,9 +17,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #site-header {
-    @apply fixed overflow-hidden top-0 inset-x-0 h-20 z-10 px-8 pt-4 bg-white;
+    @apply fixed overflow-hidden top-0 inset-x-0 h-20 z-10 pt-4 bg-white;
     #site-header-bar {
-        @apply max-w-screen-xl grid grid-cols-1 place-items-start mx-auto;
+        @apply max-w-screen-xl grid grid-cols-1 place-items-start px-8 mx-auto;
     }
 }
 
@@ -32,41 +32,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #indexLayout {
-    @apply md:max-w-screen-xl hidden md:grid md:grid-cols-1 md:gap-8;
-}
-
-#indexLayoutMobile {
-    @apply max-w-screen-sm md:hidden grid grid-cols-1 gap-8;
-    .indexCarouselItem {
-        amp-img {
-            @apply rounded-lg mb-2;
-        }
-        .indexCarouselDesc {
-            * {
-                @apply whitespace-normal;
-            }
-            h1 {
-                @apply font-sans font-bold text-lg mb-1;
-            }
-            p {
-                @apply text-sm text-gray-500;
-            }
-        }
-    }
-}
-
-#indexLayout, #indexLayoutMobile {
-    @apply px-8 pt-8 mx-auto;
+    @apply md:max-w-screen-xl grid grid-cols-1 gap-8 px-8 pt-8 pb-16 mx-auto;
 }
 
 .indexCarousel {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8;
     > h1 {
-        @apply font-extrabold text-xl lg:text-2xl mb-4;
+        @apply sm:col-span-2 md:col-span-3 lg:col-span-4 font-extrabold text-2xl lg:text-3xl;
     }
     .indexCarouselItem {
-        @apply w-64 h-64;
         amp-img {
             @apply rounded-lg mb-2;
+            img {
+                @apply object-cover object-center;
+            }
         }
         .indexCarouselDesc {
             h1 {
@@ -87,6 +66,9 @@ h1, h2, h3, h4, h5, h6 {
     @apply col-span-1 lg:col-span-3 grid grid-cols-1 gap-4;
     amp-youtube {
         @apply col-span-1 lg:rounded-lg -mt-8 -mx-8 lg:m-0;
+        amp-img[placeholder] img {
+            @apply object-cover object-center;
+        }
     }
     #videoDescription {
         @apply col-span-1;
@@ -118,6 +100,9 @@ h1, h2, h3, h4, h5, h6 {
             @apply col-span-1;
             amp-img {
                 @apply rounded-lg;
+                img {
+                    @apply object-cover object-center;
+                }
             }
         }
         .videoLinksDescription {

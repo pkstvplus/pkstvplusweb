@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig) {
     let { Liquid } = require('liquidjs')
     let liquidjsOptions = {
         extname: '.liquid',
-        dynamicPartials: false,
+        dynamicPartials: true,
         strict_filters: true,
         root: ['src']
     }
@@ -23,6 +23,7 @@ module.exports = function(eleventyConfig) {
 
     // local plugin
     eleventyConfig.addPlugin(require('./plugin/date'))
+    eleventyConfig.addPlugin(require('./plugin/shuffle'))
 
     // build events
     eleventyConfig.on('beforeBuild', function() {
