@@ -29,7 +29,7 @@ const CHANNELS = [
 ]
 
 async function getData(id) {
-    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${id}&q=pks%7Cpartai%20keadilan%20sejahtera%20-ruu%20-kekerasan%20-seksual%20-gelora&maxResults=10&order=date&type=video&videoSyndicated=true&videoEmbeddable=true&key=${YOUTUBE_API_KEY}`
+    let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${id}&q=pks%7Cpartai%20keadilan%20sejahtera%20-ruu%20-kekerasan%20-seksual%20-gelora%20-fahri&maxResults=10&order=date&type=video&videoSyndicated=true&videoEmbeddable=true&key=${YOUTUBE_API_KEY}`
     let data = await Cache(url, {
         duration: '1d',
         type: 'json'
