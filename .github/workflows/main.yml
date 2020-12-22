@@ -1,6 +1,6 @@
 # .github/workflows/main.yml
 
-name: bDaily Build
+name: Daily Build
 on:
   schedule:
     - cron: '0 4,10 * * *'
