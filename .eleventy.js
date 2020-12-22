@@ -39,7 +39,7 @@ module.exports = function(eleventyConfig) {
     // AMP Plugin
     eleventyConfig.addPlugin(ampPlugin, {
         minifyCSS: false,
-        validation: false
+        validation: true
     })
    
     // default dirs

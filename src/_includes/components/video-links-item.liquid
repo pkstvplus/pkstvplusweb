@@ -4,7 +4,7 @@
     </a>
     <div class="videoLinksDescription">
         <p class="videoLinksDescriptionTitle">
-            <a href="{{ item.url }}" title="{{ item.data.title }}">{{ item.data.title | truncate: 30 }}</a>
+            <a href="{{ item.url }}" title="{{ item.data.title }}">{{ item.data.title }}</a>
         </p>
         <p><span>{{ item.data.channel.name | upcase }}</span></p>
         <p><time datetime="{{ item.data.publishedAt }}">{{ item.data.publishedAt | dateReadable }}</time></p>

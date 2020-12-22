@@ -4,10 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --accent-color: #ff5000;
-}
-
 body {
     @apply min-h-screen flex flex-col bg-gray-100;
 }
@@ -59,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #videoLayout {
-    @apply max-w-screen-xl grid grid-cols-1 lg:grid-cols-4 gap-x-4 gap-y-8 items-start p-8 mx-auto;
+    @apply max-w-screen-xl grid grid-cols-1 lg:grid-cols-4 gap-x-4 gap-y-8 items-start p-8 -mt-20 lg:mt-0 mx-auto;
 }
 
 #videoPlayer {
@@ -73,20 +69,17 @@ h1, h2, h3, h4, h5, h6 {
     #videoDescription {
         @apply col-span-1;
         h1 {
-            @apply font-extrabold text-xl lg:text-3xl mb-4;
-            &:hover {
-                color: var(--accent-color);
-            }
+            @apply transition font-extrabold hover:text-accented text-xl lg:text-3xl mb-4;
         }
         p {
             &#date {
-                @apply text-sm mb-4;
+                @apply text-sm lg:text-base mb-4;
             }
             &#description {
-                @apply text-lg mb-4;
+                @apply text-base lg:text-lg break-words mb-4;
             }
             &#channel-name {
-                @apply text-base;
+                @apply text-base lg:text-lg transition hover:text-accented;
             }
         }
     }
@@ -108,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
         .videoLinksDescription {
             @apply col-span-1;
             p {
-                @apply text-sm sm:text-lg lg:text-xs;
+                @apply truncate text-sm sm:text-lg lg:text-xs;
                 &.videoLinksDescriptionTitle {
                     @apply font-bold text-base sm:text-xl lg:text-sm;
                 }
