@@ -22,8 +22,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setLibrary('liquid', new Liquid(liquidjsOptions))
 
     // local plugin
-    eleventyConfig.addPlugin(require('./plugin/date'))
-    eleventyConfig.addPlugin(require('./plugin/shuffle'))
+    eleventyConfig.addPlugin(require('./plugin/eleventy/date'))
+    eleventyConfig.addPlugin(require('./plugin/eleventy/shuffle'))
 
     // build events
     eleventyConfig.on('beforeBuild', function() {

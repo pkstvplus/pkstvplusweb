@@ -9,7 +9,7 @@ layout: layout/layout
 
     <!--PKS TV-->
     {% assign pks_tv = collections.video | where: 'data.channel.name', 'PKSTV' | sort: 'data.publishedAt' | reverse %}
-    {% include 'components/index/carousel-item.liquid', carouselTitle: '#BersamaMelayaniRakyat', posts: pks_tv, amount: 8 %}
+    {% include 'components/index/carousel-item.liquid', carouselTitle: 'Bersama Melayani Rakyat', posts: pks_tv, amount: 8 %}
 
     <!--PKS TV DPR_RI-->
     {% assign pks_tv_dpr = collections.video | where: 'data.channel.name', 'PKSTV DPR RI' | sort: 'data.publishedAt' | reverse %}
@@ -30,8 +30,4 @@ layout: layout/layout
     <!--Daerah-->
     {% assign daerah = collections.daerah | sort: 'data.publishedAt' | reverse %}
     {% include 'components/index/carousel-item.liquid', carouselTitle: 'Berkhidmat di Seluruh Indonesia', posts: daerah, amount: 12 %}
-
-    <!--Berita-->
-    {% assign news = collections.media | sort: 'data.publishedAt' | reverse %}
-    {% include 'components/index/carousel-item.liquid', carouselTitle: 'Kabar Media', posts: news, amount: 12 %}
 </div>

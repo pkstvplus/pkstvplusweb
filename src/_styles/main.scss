@@ -34,9 +34,13 @@ h1, h2, h3, h4, h5, h6 {
 .indexCarousel {
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8;
     > h1 {
-        @apply sm:col-span-2 md:col-span-3 lg:col-span-4 font-extrabold text-2xl lg:text-3xl;
+        @apply sm:col-span-2 md:col-span-3 lg:col-span-4 font-extrabold text-2xl lg:text-3xl px-2;
+        span {
+            @apply transition hover:text-accented;
+        }
     }
     .indexCarouselItem {
+        @apply transition hover:bg-white rounded-lg p-2;
         amp-img {
             @apply rounded-lg mb-2;
             img {
@@ -45,7 +49,10 @@ h1, h2, h3, h4, h5, h6 {
         }
         .indexCarouselDesc {
             h1 {
-                @apply font-sans font-bold truncate text-base h-6 mb-1;
+                @apply transition hover:text-accented font-sans font-bold truncate text-base h-6 mb-1;
+                &+p {
+                    @apply transition hover:text-accented;
+                }
             }
             p {
                 @apply text-xs text-gray-500;
@@ -59,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #videoPlayer {
-    @apply col-span-1 lg:col-span-3 grid grid-cols-1 gap-4;
+    @apply col-span-1 lg:col-span-3 grid grid-cols-1 gap-4 max-h-screen;
     amp-youtube {
         @apply col-span-1 lg:rounded-lg -mt-8 -mx-8 lg:m-0;
         amp-img[placeholder] img {
@@ -67,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
     #videoDescription {
-        @apply col-span-1;
+        @apply col-span-1 flex flex-col;
         h1 {
             @apply transition font-extrabold hover:text-accented text-xl lg:text-3xl mb-4;
         }
@@ -76,19 +83,49 @@ h1, h2, h3, h4, h5, h6 {
                 @apply text-sm lg:text-base mb-4;
             }
             &#description {
-                @apply text-base lg:text-lg break-words mb-4;
-            }
-            &#channel-name {
-                @apply text-base lg:text-lg transition hover:text-accented;
+                @apply text-base lg:text-lg break-words mb-4 lg:h-64 lg:overflow-auto;
+
+                /* Scrollbar behaviour */
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+                &::-webkit-scrollbar {
+                    @apply hidden;
+                }
+                /* Scrollbar behaviour end */
             }
         }
+        
+        #channel-name {
+            @apply flex flex-row items-center mb-4;
+            h2#channel-title {
+                @apply font-sans font-bold text-lg lg:text-xl transition hover:text-accented;
+            }
+            .yt-icon {
+                mask-image: url(https://simpleicons.org/icons/youtube.svg);
+                @apply bg-gray-400 hover:bg-red-600 transition w-6 h-6 ml-4;
+            }
+        }
+
     }
 }
 
 #videoLinks {
-    @apply col-span-1 lg:col-span-1 grid grid-cols-1 gap-y-4;
+    @apply col-span-1 lg:col-span-1 grid grid-cols-1 gap-y-2 max-h-screen overflow-auto -mx-2 lg:mx-0;
+
+    /* Scrollbar behaviour */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        @apply hidden;
+    }
+    /* Scrollbar behaviour end */
+
+    > h1 {
+        @apply transition font-sans font-bold text-lg sm:text-xl lg:text-base hover:text-accented px-2;
+    }
+
     .videoLinksItem {
-        @apply grid grid-cols-2 gap-2;
+        @apply transition hover:bg-white rounded-lg grid grid-cols-2 gap-2 p-2;
         .videoLinksImage {
             @apply col-span-1;
             amp-img {
@@ -104,6 +141,9 @@ h1, h2, h3, h4, h5, h6 {
                 @apply truncate text-sm sm:text-lg lg:text-xs;
                 &.videoLinksDescriptionTitle {
                     @apply font-bold text-base sm:text-xl lg:text-sm;
+                    &, &+p {
+                        @apply transition hover:text-accented;
+                    }
                 }
             }
         }
