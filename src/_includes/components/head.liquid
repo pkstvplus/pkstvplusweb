@@ -2,6 +2,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="{{ page.url }}">
 
+{% include 'components/favicons' %}
+
 {% include 'components/style' %}
 
-<title>{{ pkg.name }}</title>
+{% if title %}
+<title>{{ title }} | {{ site.main.title }}</title>
+{% else %}
+<title>{{ site.main.title }} | {{ site.main.description }}</title>
+{% endif %}

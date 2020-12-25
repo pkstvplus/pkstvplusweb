@@ -1,15 +1,19 @@
 const execSync = require('child_process').execSync
+const chalk = require('chalk')
 const ampPlugin = require('@ampproject/eleventy-plugin-amp')
 
 module.exports = function(eleventyConfig) {
 
     //passthrough copy
     eleventyConfig.addPassthroughCopy({
-        'assets/logo': 'img/logo'
+        'assets/logo': 'img/logo',
+        'assets/icons': '.',
+        'assets/static': '.'
     })
 
     //add watch target
     eleventyConfig.addWatchTarget('./src/_styles/')
+    eleventyConfig.addWatchTarget('./src/_sw/')
     eleventyConfig.addWatchTarget('./gulpfile.js/')
 
     let { Liquid } = require('liquidjs')
@@ -27,13 +31,15 @@ module.exports = function(eleventyConfig) {
 
     // build events
     eleventyConfig.on('beforeBuild', function() {
-        console.log('Menjalankan tugas pra-build...')
+        console.log(chalk.hex('#FF5000')('Menjalankan tugas pra-build...'))
         execSync('npx gulp css', {stdio: 'inherit'})
-        console.log('Tugas pra-build selesai.')
+        console.log(chalk.hex('#FF5000')('Tugas pra-build selesai.'))
     })
 
     eleventyConfig.on('afterBuild', function() {
-        console.log("Tidak ada tugas paska-build.")
+        console.log(chalk.hex('#FF5000')('Menjalankan tugas post-build...'))
+        execSync('npx gulp sw', {stdio: 'inherit'})
+        console.log(chalk.hex('#FF5000')('Tugas post-build selesai.'))
     })
 
     // AMP Plugin
