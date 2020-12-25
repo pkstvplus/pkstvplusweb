@@ -1,7 +1,7 @@
 <div class="indexCarousel">
     <h1><span>{{ carouselTitle }}</span></h1>
     {% for post in posts limit: amount %}
-    <div class="indexCarouselItem {% if forloop.index > 6 %}hidden lg:block{% elsif forloop.index > 4 %}hidden md:block{% else %}block{% endif %}">
+    <div class="indexCarouselItem {% if forloop.index > 6 %}hidden lg:block{% else %}block{% endif %}">
         <a href="{{ post.url }}" title="{{ post.data.title | escape }}">
             <amp-img src="{{ post.data.image }}" width="480" height="270" layout="responsive" alt="{{ post.data.title | escape }}"></amp-img>
         </a>

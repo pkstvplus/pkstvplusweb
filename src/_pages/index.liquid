@@ -29,7 +29,9 @@ layout: layout/layout
 
     <!--Milenial-->
     {% assign milenial = collections.milenial | sort: 'data.publishedAt' | reverse %}
-    {% include 'components/index/carousel-item.liquid', carouselTitle: 'Buat Kamu, Iya Kamu 💕', posts: milenial, amount: 8 %}
+    {% assign gamal = collections.video | where: 'data.channel.name', 'Gamal Albinsaid' | sort: 'data.publishedAt' | reverse %}
+    {% assign milenial_all = milenial | concat: gamal | sort: 'data.publishedAt' | reverse %}
+    {% include 'components/index/carousel-item.liquid', carouselTitle: 'Buat Kamu, Iya Kamu 💕', posts: milenial_all, amount: 8 %}
 
     <!--Daerah-->
     {% assign daerah = collections.daerah | sort: 'data.publishedAt' | reverse %}

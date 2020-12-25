@@ -6,6 +6,7 @@ const src = [
     'UC8dV_vnbGZulXKb67LVSnQQ', // Jateng
     'UCtoa6WUiC525dzMww-1woOw', // Jatim
     'UCtDL-L8ssHrojKMrQ77tmJQ', // Banten
+    'UCWUnVTz3AGI_Hd7Soqtmx4Q', // Tangsel - Banten
     'UCdXOX4b7sD0mLSby1WerAWQ', // Bandung - Jabar
     'UC4ZznWNHGwPSNwPvZ_kh-dQ', // Lampung
     'UCRC7h-WNmKfEAym4gyT_UGQ', // Sumsel
@@ -14,8 +15,8 @@ const src = [
     'UC8_pkEdf01CFdhnaGA75pGg', // Kepri
     'UCqaNpljy0wAiULjgSHSKuMw', // Kalbar
     'UCG764Oc9CPTxYGNxcozi0pg', // Kaltim
-    'UCc05t3_b73ay70oJ7KijY1w', // Palangka-Kalteng
-    'UCEy5udKpXeATNSDU-y5h24g', // Kapuas-Kalteng
+    'UCc05t3_b73ay70oJ7KijY1w', // Palangka - Kalteng
+    'UCEy5udKpXeATNSDU-y5h24g', // Kapuas - Kalteng
     'UCLZTHtYfVcTMX9YqsyIDm_Q', // NTB
     'UCKyyaWzVG8f98nGxip2Dm9A', // Sulut
 ]

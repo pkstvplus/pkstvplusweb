@@ -38,6 +38,11 @@ h1, h2, h3, h4, h5, h6 {
             @apply text-xs sm:text-sm text-center;
         }
     }
+    .active {
+        &, &+p {
+            @apply text-accented;
+        }
+    }
 }
 
 #indexLayout {
@@ -47,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 .indexCarousel {
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8;
     > h1 {
-        @apply sm:col-span-2 md:col-span-3 lg:col-span-4 font-extrabold text-2xl lg:text-3xl sm:px-2 mb-8 sm:mb-0;
+        @apply sm:col-span-2 md:col-span-3 lg:col-span-4 font-extrabold text-2xl lg:text-3xl sm:px-2;
         span {
             @apply transition hover:text-accented;
         }
@@ -55,13 +60,12 @@ h1, h2, h3, h4, h5, h6 {
     .indexCarouselItem {
         @apply transition sm:hover:bg-white sm:rounded-lg sm:p-2;
         amp-img {
-            @apply sm:rounded-lg mb-2 -m-10 sm:m-0;
+            @apply sm:rounded-lg mb-2 -mx-8 sm:mx-0;
             img {
                 @apply object-cover object-center;
             }
         }
         .indexCarouselDesc {
-            @apply mb-8 sm:mb-0;
             h1 {
                 @apply transition hover:text-accented font-sans font-bold truncate text-base h-6 mb-1;
                 &+p {

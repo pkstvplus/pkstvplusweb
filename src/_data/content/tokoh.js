@@ -6,7 +6,7 @@ const src = [
     'UCk0Q0aPwGn0fZDE_fpsedkQ', // Ledia Hanifa Amaliah
     'UCRuvdH1XhCW8u-V_A18X2cg', // Hidayat Nur Wahid
     'UCGrXogvVaxevCi2FQhO-X5g', // Ahmad Heryawan
-    'UCGI51N_aAbsn1Ag7w4xGA2w', // Kang Asmul
+    'UCKZEfS7ucKz3hBxmb48DivA', // Gamal Albinsaid
 ]
 
 const amount = 50
