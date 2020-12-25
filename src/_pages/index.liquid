@@ -14,14 +14,18 @@ layout: layout/layout
     <!--PKS TV DPR_RI-->
     {% assign pks_tv_dpr = collections.video | where: 'data.channel.name', 'PKSTV DPR RI' | sort: 'data.publishedAt' | reverse %}
     {% include 'components/index/carousel-item.liquid', carouselTitle: 'Kabar Dari Senayan', posts: pks_tv_dpr, amount: 8 %}
+    
+    <!--Tokoh-->
+    {% assign tokoh = collections.tokoh | sort: 'data.publishedAt' | reverse %}
+    {% include 'components/index/carousel-item.liquid', carouselTitle: 'Para Pelayan Rakyat', posts: tokoh, amount: 8 %}
 
     <!--Ulama-->
     {% assign ulama = collections.ulama | sort: 'data.publishedAt' | reverse %}
     {% include 'components/index/carousel-item.liquid', carouselTitle: 'Taujih Guru Kita', posts: ulama, amount: 8 %}
 
-    <!--Tokoh-->
-    {% assign tokoh = collections.tokoh | sort: 'data.publishedAt' | reverse %}
-    {% include 'components/index/carousel-item.liquid', carouselTitle: 'Para Pelayan Rakyat', posts: tokoh, amount: 8 %}
+    <!--Murottal-->
+    {% assign murottal = collections.murottal | sort: 'data.publishedAt' | reverse %}
+    {% include 'components/index/carousel-item.liquid', carouselTitle: 'Dengan Dzikir Tenanglah Hati', posts: murottal, amount: 8 %}
 
     <!--Milenial-->
     {% assign milenial = collections.milenial | sort: 'data.publishedAt' | reverse %}

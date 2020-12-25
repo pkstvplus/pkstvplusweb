@@ -20,11 +20,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #site-main {
-    @apply flex-1 pt-20;
+    @apply flex-1 pt-20 pb-20;
 }
 
 #site-footer {
     @apply hidden;
+}
+
+#site-mobile-menu {
+    @apply fixed bottom-0 inset-x-0 grid grid-cols-4 place-items-center bg-white lg:hidden;
+    .site-mobile-menu-items {
+        @apply stroke-current text-gray-500 hover:text-accented transition p-2;
+        svg {
+            @apply w-8 h-8 md:w-12 md:h-12 mx-auto;
+        }
+        p {
+            @apply text-xs sm:text-sm text-center;
+        }
+    }
 }
 
 #indexLayout {
@@ -34,20 +47,21 @@ h1, h2, h3, h4, h5, h6 {
 .indexCarousel {
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8;
     > h1 {
-        @apply sm:col-span-2 md:col-span-3 lg:col-span-4 font-extrabold text-2xl lg:text-3xl px-2;
+        @apply sm:col-span-2 md:col-span-3 lg:col-span-4 font-extrabold text-2xl lg:text-3xl sm:px-2 mb-8 sm:mb-0;
         span {
             @apply transition hover:text-accented;
         }
     }
     .indexCarouselItem {
-        @apply transition hover:bg-white rounded-lg p-2;
+        @apply transition sm:hover:bg-white sm:rounded-lg sm:p-2;
         amp-img {
-            @apply rounded-lg mb-2;
+            @apply sm:rounded-lg mb-2 -m-10 sm:m-0;
             img {
                 @apply object-cover object-center;
             }
         }
         .indexCarouselDesc {
+            @apply mb-8 sm:mb-0;
             h1 {
                 @apply transition hover:text-accented font-sans font-bold truncate text-base h-6 mb-1;
                 &+p {
@@ -66,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #videoPlayer {
-    @apply col-span-1 lg:col-span-3 grid grid-cols-1 gap-4 max-h-screen;
+    @apply col-span-1 lg:col-span-3 grid grid-cols-1 gap-4;
     amp-youtube {
         @apply col-span-1 lg:rounded-lg -mt-8 -mx-8 lg:m-0;
         amp-img[placeholder] img {

@@ -5,6 +5,8 @@ const src = [
     'UChbJsQxU40pql2gabKCy8wQ', // Ahmad Syaikhu (Asyik)
     'UCk0Q0aPwGn0fZDE_fpsedkQ', // Ledia Hanifa Amaliah
     'UCRuvdH1XhCW8u-V_A18X2cg', // Hidayat Nur Wahid
+    'UCGrXogvVaxevCi2FQhO-X5g', // Ahmad Heryawan
+    'UCGI51N_aAbsn1Ag7w4xGA2w', // Kang Asmul
 ]
 
 const amount = 50
