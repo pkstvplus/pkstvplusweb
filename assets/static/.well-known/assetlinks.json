@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "app.netlify.pkstvplus.twa",
+                   "sha256_cert_fingerprints": ["7D:4E:02:6F:A4:A9:16:9D:50:86:6B:4E:82:0F:A9:CE:C7:93:74:7F:51:40:FD:6A:FB:7F:B6:55:08:F6:46:F8"] }
+    }]
