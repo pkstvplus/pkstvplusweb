@@ -5,6 +5,7 @@ const pipeline = require('readable-stream').pipeline
 // SASS Compiler task
 const sass = require('gulp-sass')
 sass.compiler = require('sass')
+const Fiber = require('fibers')
 const replace = require('gulp-replace')
 const postcss = require('gulp-postcss')
 const tailwind = require('tailwindcss')
@@ -23,7 +24,7 @@ function main() {
 
     return pipeline(
         src(SRC),
-        sass(),
+        sass({fiber: Fiber}).on('error', sass.logError),
         postcss(processors),
         replace('!important', ''),
         dest(DEST)

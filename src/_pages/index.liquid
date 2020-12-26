@@ -20,7 +20,7 @@ layout: layout/layout
     {% include 'components/index/carousel-item.liquid', carouselTitle: 'Para Pelayan Rakyat', posts: tokoh, amount: 8 %}
 
     <!--Ulama-->
-    {% assign ulama = collections.ulama | sort: 'data.publishedAt' | reverse %}
+    {% assign ulama = collections.ulama | shuffle %}
     {% include 'components/index/carousel-item.liquid', carouselTitle: 'Taujih Guru Kita', posts: ulama, amount: 8 %}
 
     <!--Murottal-->

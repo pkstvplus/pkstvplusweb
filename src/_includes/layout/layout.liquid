@@ -1,16 +1,13 @@
 ---
 layout: layout/base
 ---
-<header id="site-header" class="{% if page.url contains '/v/' %}hidden lg:block{% else %}block{% endif %}" amp-fx="float-in-top">
-    <div id="site-header-bar">
-        <a href="/" title="Home"><amp-img src="/img/logo/logo.png" width="125" height="48" layout="fixed" alt="logo"></amp-img></a>
-    </div>
-</header>
+
+{% include 'components/header' %}
 <main id="site-main">
     {{ content }}
 </main>
 <footer id="site-footer"></footer>
-<nav id="site-mobile-menu">
+<nav id="site-mobile-menu" amp-fx="float-in-bottom">
     {% for item in site.menu %}
     <div class="site-mobile-menu-items">
         <a href="{{ item.url }}" class="{% if item.url == page.url %}active{% endif %}" title="{{ item.title }}">{{ item.icon }}</a>

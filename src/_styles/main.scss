@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 #site-header {
     @apply fixed overflow-hidden top-0 inset-x-0 h-20 z-10 pt-4 bg-white;
     #site-header-bar {
-        @apply max-w-screen-xl grid grid-cols-1 place-items-start px-8 mx-auto;
+        @apply max-w-screen-xl grid grid-cols-2 items-center justify-items-start px-8 mx-auto;
     }
 }
 
@@ -27,15 +27,43 @@ h1, h2, h3, h4, h5, h6 {
     @apply hidden;
 }
 
+#blankpage {
+    @apply grid place-content-center gap-4 py-20 px-8;
+    amp-img img {
+        @apply object-center object-contain;
+    }
+    h1 {
+        @apply font-extrabold text-center text-3xl lg:text-5xl hover:text-accented transition select-none;
+    }
+}
+
+#site-desktop-menu {
+    @apply hidden justify-self-end justify-items-center lg:flex lg:flex-row;
+    .site-desktop-menu-items {
+        @apply flex flex-row items-center p-2 rounded-full transition hover:bg-accented hover:bg-opacity-10 hover:text-accented;
+        svg {
+            @apply w-6 h-6 stroke-current select-none;
+        }
+        p {
+            @apply ml-2 select-none
+        }
+        &.active {
+            &, &+p {
+                @apply font-bold text-accented;
+            }
+        }
+    }
+}
+
 #site-mobile-menu {
-    @apply fixed bottom-0 inset-x-0 grid grid-cols-4 place-items-center bg-white lg:hidden;
+    @apply fixed bottom-0 inset-x-0 overflow-hidden grid grid-cols-4 place-items-center bg-white lg:hidden;
     .site-mobile-menu-items {
         @apply stroke-current text-gray-500 hover:text-accented transition p-2;
         svg {
-            @apply w-8 h-8 md:w-12 md:h-12 mx-auto;
+            @apply w-8 h-8 md:w-12 md:h-12 mx-auto select-none;
         }
         p {
-            @apply text-xs sm:text-sm text-center;
+            @apply text-xs sm:text-sm text-center select-none;
         }
     }
     .active {
@@ -52,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 .indexCarousel {
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8;
     > h1 {
-        @apply sm:col-span-2 md:col-span-3 lg:col-span-4 font-extrabold text-2xl lg:text-3xl sm:px-2;
+        @apply sm:col-span-2 md:col-span-3 lg:col-span-4 font-extrabold text-2xl lg:text-3xl sm:px-2 select-none;
         span {
             @apply transition hover:text-accented;
         }
@@ -67,13 +95,13 @@ h1, h2, h3, h4, h5, h6 {
         }
         .indexCarouselDesc {
             h1 {
-                @apply transition hover:text-accented font-sans font-bold truncate text-base h-6 mb-1;
+                @apply transition hover:text-accented font-sans font-bold truncate text-base select-none h-6 mb-1;
                 &+p {
                     @apply transition hover:text-accented;
                 }
             }
             p {
-                @apply text-xs text-gray-500;
+                @apply text-xs text-gray-500 select-none;
             }
         }
     }
@@ -94,14 +122,14 @@ h1, h2, h3, h4, h5, h6 {
     #videoDescription {
         @apply col-span-1 flex flex-col;
         h1 {
-            @apply transition font-extrabold hover:text-accented text-xl lg:text-3xl mb-4;
+            @apply transition font-extrabold hover:text-accented text-xl select-none lg:text-3xl mb-4;
         }
         p {
             &#date {
-                @apply text-sm lg:text-base mb-4;
+                @apply text-sm lg:text-base select-none mb-4;
             }
             &#description {
-                @apply text-base lg:text-lg break-words mb-4 lg:h-64 lg:overflow-auto;
+                @apply text-base lg:text-lg break-words mb-4 lg:h-64 lg:overflow-auto select-none;
 
                 /* Scrollbar behaviour */
                 -ms-overflow-style: none;
@@ -116,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
         #channel-name {
             @apply flex flex-row items-center mb-4;
             h2#channel-title {
-                @apply font-sans font-bold text-lg lg:text-xl transition hover:text-accented;
+                @apply font-sans font-bold text-lg lg:text-xl transition hover:text-accented select-none;
             }
             .yt-icon {
                 mask-image: url(https://simpleicons.org/icons/youtube.svg);
@@ -139,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
     /* Scrollbar behaviour end */
 
     > h1 {
-        @apply transition font-sans font-bold text-lg sm:text-xl lg:text-base hover:text-accented px-2;
+        @apply transition font-sans font-bold text-lg sm:text-xl lg:text-base hover:text-accented select-none px-2;
     }
 
     .videoLinksItem {
@@ -156,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
         .videoLinksDescription {
             @apply col-span-1;
             p {
-                @apply truncate text-sm sm:text-lg lg:text-xs;
+                @apply truncate text-sm sm:text-lg lg:text-xs select-none;
                 &.videoLinksDescriptionTitle {
                     @apply font-bold text-base sm:text-xl lg:text-sm;
                     &, &+p {
