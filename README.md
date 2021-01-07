@@ -1,3 +1,5 @@
+![](https://res.cloudinary.com/pkstvplus/image/fetch/w_300,f_auto/https://pkstvplus.netlify.app/img/logo/logo-box.png)
+
 # PKS TV+
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/40f42642-37f1-4101-8972-2fc255c054ee/deploy-status)](https://app.netlify.com/sites/pkstvplus/deploys)
@@ -56,6 +58,8 @@ Aktif di DPD PKS Kotawaringin Timur, Kalimantan Tengah.
 
 ## Informasi Teknis
 Aplikasi ini merupakan sebuah aplikasi web berbasis [Node.js](https://nodejs.org/en/), yang mengadopsi prinsip [JAMStack](https://jamstack.org/). Dibangun menggunakan [Eleventy](https://11ty.dev/), salah satu generator situs statik paling tersohor di jagad per-situs-statik-an dan banyak dipakai oleh para developer web. Tampilan antarmukanya didesain dengan menggunakan komponen dari [AMP](https://amp.dev/), alasannya supaya ringan dan kencang khususnya bila diakses dari hp-hp murah para kader yang mereknya siomay, mito atau apalah itu. Selain itu juga memanfaatkan [TailwindCSS](https://tailwindcss.com/). Dihosting \*gratis\* di [Netlify](https://netlify.com/).
+
+Aplikasi ini adalah Aplikasi Web Progresif (PWA) dan dapat diinstall melalui banner prompt di bagian bawah browser hp anda atau di laptop melalui prompt di ujung sebelah kanan URL bar. Gunakan Chrome ayau Microsoft Edge terbaru untuk pengalaman terbaik.
 
 ### Panduan build di lokal
 Silahkan clone dulu repo ini:
