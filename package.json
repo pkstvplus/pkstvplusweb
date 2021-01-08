@@ -35,7 +35,7 @@
     "postcss": "^8.2.1",
     "postcss-import-url": "^6.0.0",
     "readable-stream": "^3.6.0",
-    "sass": "^1.30.0",
+    "sass": "^1.32.0",
     "tailwindcss": "^2.0.2",
     "workbox-build": "^6.0.2"
   },
