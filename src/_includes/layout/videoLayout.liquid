@@ -9,7 +9,7 @@ eleventyComputed:
     channel:
         name: '{{ video.snippet.channelTitle }}'
         url: '{{ video.snippet.channelId | prepend: "https://www.youtube.com/channel/" | append: "?sub_confirmation=1" }}'
-permalink: '/v/{{ video.snippet.resourceId.videoId | slug }}.html'
+permalink: '/video/{{ video.snippet.resourceId.videoId | slug }}.html'
 ---
 <div id="videoLayout">
     <div id="videoPlayer">

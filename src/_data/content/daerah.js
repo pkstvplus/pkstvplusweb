@@ -17,6 +17,7 @@ const src = [
     'UCG764Oc9CPTxYGNxcozi0pg', // Kaltim
     'UCc05t3_b73ay70oJ7KijY1w', // Palangka - Kalteng
     'UCEy5udKpXeATNSDU-y5h24g', // Kapuas - Kalteng
+    'UC2pwtYpk4o2LcUdlE3JtKmA', // Kalsel
     'UCLZTHtYfVcTMX9YqsyIDm_Q', // NTB
     'UCKyyaWzVG8f98nGxip2Dm9A', // Sulut
 ]

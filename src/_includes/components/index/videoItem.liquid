@@ -1,0 +1,10 @@
+<div class="indexCarouselItem">
+    <a href="{{ post.url }}" title="{{ post.data.title | escape }}">
+        <amp-img src="{{ post.data.image }}" width="480" height="270" layout="responsive" alt="{{ post.data.title | escape }}"></amp-img>
+    </a>
+    <div class="indexCarouselDesc">
+        <h1><a href="{{ post.url }}" title="{{ post.data.title | escape }}">{{ post.data.title | truncate: 50 }}</a></h1>
+        <p>{{ post.data.channel.name | upcase }}</p>
+        <p>{{ post.data.publishedAt | dateReadable }}</p>
+    </div>
+</div>

@@ -6,7 +6,6 @@ layout: layout/base
 <main id="site-main">
     {{ content }}
 </main>
-<footer id="site-footer"></footer>
 <nav id="site-mobile-menu" amp-fx="float-in-bottom">
     {% for item in site.menu %}
     <div class="site-mobile-menu-items">
@@ -16,3 +15,4 @@ layout: layout/base
     {% endfor %}
 </nav>
 {% include 'components/install-sw' %}
+{% include 'components/footer' %}
