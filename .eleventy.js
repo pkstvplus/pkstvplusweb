@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget('./src/_styles/')
     eleventyConfig.addWatchTarget('./src/_sw/')
     eleventyConfig.addWatchTarget('./gulpfile.js/')
+    eleventyConfig.addWatchTarget('./tailwind.config.js')
 
     let { Liquid } = require('liquidjs')
     let liquidjsOptions = {
