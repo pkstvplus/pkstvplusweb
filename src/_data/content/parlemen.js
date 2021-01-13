@@ -1,8 +1,8 @@
 const exportData = require('../../../plugin/other/fetchYoutubeData')
 
 const src = [
-    'UCToDQGTa-S1hbnfXu47eULA', // PKSTV
-    'UCIkLKSeWh7-tpPnVnoQlBfg', // PKSTV DPR-RI
+    'UCejL25NjyNxlMR0JqlFX4Dg', // DPR RI
+    'UC0emyqBTszX2Cd9z0G8bYPw', // MPR RI
 ]
 
 const amount = 50
